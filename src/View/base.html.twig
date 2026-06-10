@@ -30,6 +30,11 @@
             </li>
         </ul>
     </div>
+    <form class="d-flex" method="post" action="/?controller=Article&action=search">
+        <input class="form-control me-2" type="search" placeholder="Recherchez un article" name="Search" id="Search"
+               value="{{ keyword is defined ? keyword : "" }}"
+        >
+    </form>
 
 </nav>
 
