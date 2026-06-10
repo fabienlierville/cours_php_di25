@@ -69,7 +69,7 @@ class UserController extends AbstractController
             header("Location:/User/login");
             exit();
         }else{
-            return $this->twig->render("user/create.html.twig");
+            return $this->twig->render("User/create.html.twig");
         }
 
     }
