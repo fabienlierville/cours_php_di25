@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{% block title %}Login- {{ parent() }}{% endblock %}
+
+{% block body %}
+    <h1>Login</h1>
+
+    <form method="post">
+
+        <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Votre mail" name="mail">
+        </div>
+
+        <div class="mb-3">
+            <input type="password" class="form-control" placeholder="mot de passe" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+    <p>Pas encore de compte ? <a href="/User/create">Créez en un</a></p>
+{% endblock %}
