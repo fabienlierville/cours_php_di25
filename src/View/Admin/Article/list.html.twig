@@ -17,11 +17,11 @@
 
         {% for article in articles %}
             <tr>
-                <th scope="row"><a href="/?controller=AdminArticle&action=edit&param={{ article.id }}">{{ article.Id }}</a></th>
-                <td><a href="/?controller=AdminArticle&action=show&param={{ article.id }}">{{ article.Titre }}</a></td></td>
+                <th scope="row"><a href="/AdminArticle/edit/{{ article.id }}">{{ article.Id }}</a></th>
+                <td><a href="/AdminArticle/show/{{ article.id }}">{{ article.Titre }}</a></td></td>
                 <td>{{ article.DatePublication|date('d/m/Y') }}
                 <td>{{ article.Auteur }}</td>
-                <td><a href="/?controller=AdminArticle&action=delete&param={{ article.id }}"><i class="bi bi-trash"></i></a></td>
+                <td><a href="/AdminArticle/delete/{{ article.id }}"><i class="bi bi-trash"></i></a></td>
             </tr>
         {% endfor %}
 

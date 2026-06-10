@@ -20,17 +20,17 @@
                 <a class="nav-link" href="/">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/?controller=AdminArticle&action=list">Admin List</a>
+                <a class="nav-link" href="/AdminArticle/list">Admin List</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/?controller=AdminArticle&action=add">Admin Add</a>
+                <a class="nav-link" href="/AdminArticle/add">Admin Add</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/?controller=AdminArticle&action=fixtures">Fixtures</a>
+                <a class="nav-link" href="/AdminArticle/fixtures">Fixtures</a>
             </li>
         </ul>
     </div>
-    <form class="d-flex" method="post" action="/?controller=Article&action=search">
+    <form class="d-flex" method="post" action="/Article/search">
         <input class="form-control me-2" type="search" placeholder="Recherchez un article" name="Search" id="Search"
                value="{{ keyword is defined ? keyword : "" }}"
         >
