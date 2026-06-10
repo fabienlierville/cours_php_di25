@@ -206,4 +206,32 @@ class ApiArticleController{
             'message' => "Article {$id} mis à jour avec succès"
         ]);
     }
+
+    public function search (){
+
+        if($_SERVER["REQUEST_METHOD"] != "POST"){
+            header("HTTP/1.1 405 Method Not Allowed");
+            return json_encode([
+                "code" => 1,
+                "Message" => "Post Attendu"
+            ]);
+        }
+
+        //Récupération du body en String
+        $data = file_get_contents("php://input");
+        //Conversion du string en JSON
+        $json = json_decode($data);
+
+        if(!isset($json->keyword)){
+            header("HTTP/1.1 403 Forbiden");
+            return json_encode([
+                "code" => 1,
+                "Message" => "GET keyword manquant"
+            ]);
+        }
+        $articles = Article::SqlSearch($json->keyword);
+        return json_encode($articles);
+
+    }
+
 }
