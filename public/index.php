@@ -30,8 +30,8 @@ if($controller != ''){
         }else { throw new Exception("Controller {$controller} does not exist"); }
     }
     catch(Exception $e) {
-        // Penser à Gérer l’exception
-        var_dump($e->getMessage());
+        $controller = new \src\Controller\ErrorController();
+        echo $controller->show($e);
     }
 }else {
     //Route par défaut (/) ce controller sera fait plus tard dans le cadre de l’exercice Front Office
