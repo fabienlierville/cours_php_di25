@@ -15,6 +15,13 @@ abstract class AbstractController
             ,'debug' => true
         ]);
         $this->twig->addExtension(new \Twig\Extension\DebugExtension());
+        $fileExist = new \Twig\TwigFunction('file_exists', function($fullFileName){
+            return file_exists($fullFileName);
+        });
+        $this->twig->addFunction($fileExist);
+
+        $this->twig->addGlobal('session', $_SESSION);
     }
+
 
 }
