@@ -198,5 +198,25 @@ class Article{
 
     }
 
+    public static function SqlSearch(string $keyword) : array {
+        $requete = BDD::getInstance()->prepare('SELECT * FROM articles WHERE Titre LIKE :keyword OR Description LIKE :keyword ORDER BY Id DESC');
+        $requete->bindValue(':keyword','%'.$keyword.'%');
+        $requete->execute();
+        $articlesSql = $requete->fetchAll(\PDO::FETCH_ASSOC);
+        $articlesObjet = [];
+        foreach ($articlesSql as $articleSql){
+            $article = new Article();
+            $article->setId($articleSql["Id"]);
+            $article->setTitre($articleSql["Titre"]);
+            $article->setDescription($articleSql["Description"]);
+            $article->setDatePublication(new \DateTime($articleSql["DatePublication"]));
+            $article->setAuteur($articleSql["Auteur"]);
+            $article->setImageRepository($articleSql["ImageRepository"]);
+            $article->setImageFileName($articleSql["ImageFileName"]);
+            $articlesObjet[] = $article;
+        }
+        return $articlesObjet;
+    }
+
 
 }
