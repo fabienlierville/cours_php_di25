@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} > Résultat de la recherche {% endblock %}
+
+{% block body %}
+    <h1>Résutats pour la recherche : {{ keyword }}</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Titre</th>
+            <th scope="col">Date de Publication</th>
+            <th scope="col">Auteur</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td><a href="?controller=Article&action=show&param={{ article.id }}">{{ article.Titre }}</a></td>
+                <td>{{ article.DatePublication|date('d/m/Y') }}</td>
+                <td>{{ article.Auteur }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
