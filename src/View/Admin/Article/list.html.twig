@@ -21,7 +21,7 @@
                 <td><a href="/?controller=AdminArticle&action=show&param={{ article.id }}">{{ article.Titre }}</a></td></td>
                 <td>{{ article.DatePublication|date('d/m/Y') }}
                 <td>{{ article.Auteur }}</td>
-                <td><a href="#"><i class="bi bi-trash"></i></a></td>
+                <td><a href="/?controller=AdminArticle&action=delete&param={{ article.id }}"><i class="bi bi-trash"></i></a></td>
             </tr>
         {% endfor %}
 
