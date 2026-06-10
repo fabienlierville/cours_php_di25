@@ -185,6 +185,7 @@ class Article{
         foreach ($articlesSql as $articleSql){
             $article = new Article();
             $article->setTitre($articleSql["Titre"])
+                ->setId($articleSql["Id"])
                 ->setDescription($articleSql["Description"])
                 ->setDatePublication(new \DateTime($articleSql["DatePublication"]))
                 ->setAuteur($articleSql["Auteur"])
