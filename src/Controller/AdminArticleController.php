@@ -159,6 +159,7 @@ class AdminArticleController extends AbstractController
     }
 
     public function delete(int $id){
+        UserController::haveGoodRole(["TOTO","TITI","Verificateur"]);
         //Suppression si Image
         $article = Article::SqlGetById($id);
         $sqlRepository = ($article->getImageRepository() != "") ? $article->getImageRepository() : null;
