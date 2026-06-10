@@ -15,9 +15,13 @@ function chargerClasse($classe)
 // enregistrement de la fonction "chargerClasse" sur une instanciation de classe
 spl_autoload_register('chargerClasse');
 
-$controller = (isset($_GET['controller'])) ? $_GET['controller'] : '';
-$action = (isset($_GET['action'])) ? $_GET['action'] : '';
-$param = (isset($_GET['param'])) ? $_GET['param'] : '';
+
+
+$URLS = explode("/",$_GET["url"]);
+$controller = (isset($URLS[0])) ? $URLS[0] : '';
+$action = (isset($URLS[1])) ? $URLS[1] : '';
+$param = (isset($URLS[2])) ? $URLS[2] : '';
+
 
 if($controller != ''){
     try {
