@@ -13,14 +13,14 @@ class ContactController extends AbstractController {
 
     public function send(){
         //Conf Email
-        $trspt = Transport::fromDsn("smtp://3dd84281bc8679:****670a@sandbox.smtp.mailtrap.io:2525");
+        $trspt = Transport::fromDsn("smtp://3dd84281bc8679:8a9180301c670a@sandbox.smtp.mailtrap.io:2525");
         $mailer = new Mailer($trspt);
         //Création Email
         $email = (new Email())
             ->from($_POST["mail"])
             ->to("admin@cesi.local")
             ->subject("Contact depuis le formulaire")
-            ->html($this->twig->render('mail/contact.html.twig', [
+            ->html($this->twig->render('Contact/mail.html.twig', [
                 'nom' => $_POST["nom"],
                 'message' => $_POST["message"],
             ]));
