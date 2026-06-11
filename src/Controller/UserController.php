@@ -1,10 +1,9 @@
 <?php
 namespace src\Controller;
 
-//use Firebase\JWT\JWT;
-//use Firebase\JWT\Key;
+
 use src\Model\User;
-//use src\Service\JwtService;
+use src\Service\JwtService;
 
 class UserController extends AbstractController
 {
@@ -74,7 +73,7 @@ class UserController extends AbstractController
 
     }
 
-    /*
+
     public function loginjwt(){
         header("Content-Type: application/json; charset=utf-8");
 
@@ -132,7 +131,7 @@ class UserController extends AbstractController
         ]);
 
     }
-    */
+
 
 
 }
