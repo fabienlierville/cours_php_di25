@@ -5,7 +5,7 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 class JwtService{
-    public static String $secretKey = "cesi";
+    public static String $secretKey = "UneCleSecreteTresLongueEtSecuriseeQuiDepasseLesSoixanteQuatreCaracteresPourHS512!";
     public static function createToken(array $datas){
         $issuedAt = new \DateTimeImmutable();
         $expireAt = $issuedAt->modify("+3 minutes")->getTimestamp();
