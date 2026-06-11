@@ -2,6 +2,7 @@
     "require": {
         "twig/twig": "^3.27",
         "firebase/php-jwt": "^7.0",
-        "symfony/mailer": "^7.4"
+        "symfony/mailer": "^7.4",
+        "mpdf/mpdf": "^8.3"
     }
 }

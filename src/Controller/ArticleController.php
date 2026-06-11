@@ -34,4 +34,16 @@ class ArticleController extends AbstractController
         Header("location: / "); //rien dans la recherche retour à l’accueil
     }
 
+    public function pdf($id){
+        $article = Article::SqlGetById($id);
+        $mpdf = new \Mpdf\Mpdf([
+            'tempDir' => $_SERVER['DOCUMENT_ROOT'].'/../var/cache/pdf',
+        ]);
+        $mpdf->WriteHTML($this->twig->render("Article/pdf.html.twig",[
+            "article" => $article
+        ]));
+        $mpdf->Output(name: 'Article.pdf', dest: Destination::DOWNLOAD );
+
+    }
+
 }
