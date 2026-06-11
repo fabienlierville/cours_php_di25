@@ -1,6 +1,7 @@
 {
     "require": {
         "twig/twig": "^3.27",
-        "firebase/php-jwt": "^7.0"
+        "firebase/php-jwt": "^7.0",
+        "symfony/mailer": "^7.4"
     }
 }
