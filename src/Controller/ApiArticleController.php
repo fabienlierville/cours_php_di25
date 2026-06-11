@@ -2,7 +2,7 @@
 namespace src\Controller;
 
 use src\Model\Article;
-//use src\Service\JwtService;
+use src\Service\JwtService;
 
 class ApiArticleController{
 
@@ -19,12 +19,12 @@ class ApiArticleController{
             ]);
         }
 
-        /*
+
         $jwtresult = JwtService::checkToken();
         if($jwtresult["success"] != true){
             return json_encode($jwtresult);
         }
-        */
+
 
         $articles = Article::SqlGetAll();
         return json_encode($articles);
