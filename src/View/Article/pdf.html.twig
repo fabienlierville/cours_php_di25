@@ -1,0 +1,10 @@
+<h1>{{ article.titre }}</h1>
+<p><strong>Description :</strong>{{ article.description }}</p>
+<p><strong>Auteur :</strong>{{ article.Auteur }}</p>
+<p><strong>Date :</strong>{{ article.date|date("d/m/Y") }}</p>
+<p>
+
+    {% if file_exists('./uploads/images/'~article.ImageRepository~'/'~article.ImageFileName) and article.ImageFileName != "" %}
+        <img src="/uploads/images/{{ article.ImageRepository }}/{{ article.ImageFileName }}" class="img-thumbnail"/>
+    {% endif %}
+</p>
