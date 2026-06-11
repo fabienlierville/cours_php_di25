@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block title %}{{ parent() }} - Contactez nous{% endblock %}
+
+{% block body %}
+    <h1>Formulaire de contact</h1>
+
+    <form name="contact" method="post" enctype="multipart/form-data" action="/Contact/send">
+        <input type="text" name="nom" required placeholder="Votre nom" class="form-control">
+        <input type="email" name="mail" required placeholder="Votre mail" class="form-control">
+        <textarea name="message" class="form-control">Votre message</textarea>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+
+{% endblock %}
