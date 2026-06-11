@@ -1,5 +1,6 @@
 {
     "require": {
-        "twig/twig": "^3.27"
+        "twig/twig": "^3.27",
+        "firebase/php-jwt": "^7.0"
     }
 }
