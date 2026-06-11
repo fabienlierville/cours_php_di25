@@ -2,6 +2,7 @@
 
 namespace src\Controller;
 
+use Mpdf\Output\Destination;
 use src\Model\Article;
 
 
